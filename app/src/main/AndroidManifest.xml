@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.intenandbroadcast" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IntenAndBroadCast" >
+
+        <receiver
+            android:name=".testReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.example.intenandbroadcast.ACTION_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".ActivityToBroadcast"
+            android:exported="false" />
+        <activity
+            android:name=".HiddenIntent"
+            android:exported="false"
+            android:label="HiddenIntent" >
+            <intent-filter>
+                <action android:name="com.example.intenandbroadcast.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.intenandbroadcast.MY_GATEGORY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntentResolutionActivity"
+            android:exported="false"
+            android:label="IntentResolutionActivity" />
+        <activity
+            android:name=".SubActivity2"
+            android:exported="false"
+            android:label="SubActivity2" />
+        <activity
+            android:name=".SubActivity1"
+            android:exported="false"
+            android:label="SubActivity1" />
+        <activity
+            android:name=".ActivityCommunication"
+            android:exported="false"
+            android:label="ActivityCommunication" />
+        <activity
+            android:name=".ActivityStart"
+            android:exported="false"
+            android:label="ActivityStart" />
+        <activity
+            android:name=".IntentDemo"
+            android:exported="true"
+            android:label="InentDemo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
